@@ -1,0 +1,85 @@
+%% University of Cambridge colour scheme for Metropolis
+% https://github.com/EdmundGoodman/metrobridge
+% Cambridge brand guidlines: https://www.cam.ac.uk/system/files/guidelines_v8_december_2019.pdf
+% Beamer config derived from: https://github.com/vskbellala/metropolis-brown/blob/main/metropolisbrown.sty
+
+\RequirePackage{caption}
+
+%% Set whether the document is explicitly institutionally branded
+\newif\ifinstitutebrand
+\institutebrandtrue
+% \institutebrandfalse
+
+%% Beamer config
+\usetheme[progressbar=frametitle]{metropolis}
+\setbeamertemplate{navigation symbols}{}
+
+%% Constants
+% Red
+\definecolor{pantone197c}{RGB}{232,156,174}
+\definecolor{pantone199c}{RGB}{213,0,50}
+\definecolor{pantone1995c}{RGB}{138,21,56}
+% Blue
+\definecolor{pantone284c}{RGB}{108,172,228}
+\definecolor{pantone285c}{RGB}{0,114,206}
+\definecolor{pantone541c}{RGB}{0,60,113}
+% Orange
+\definecolor{pantone142c}{RGB}{241,190,72}
+\definecolor{pantone158c}{RGB}{232,119,34}
+\definecolor{pantone718c}{RGB}{190,60,113}
+% Green
+\definecolor{pantone583c}{RGB}{183,191,16}
+\definecolor{pantone369c}{RGB}{100,167,11}
+\definecolor{pantone574c}{RGB}{78,91,49}
+% Purple
+\definecolor{pantone5215c}{RGB}{175,149,166}
+\definecolor{pantone513c}{RGB}{147,50,142}
+\definecolor{pantone669c}{RGB}{63,42,86}
+% Cambridge Blue
+\definecolor{pantone557c}{RGB}{133,176,154}
+\definecolor{pantone7466c}{RGB}{0,176,185}
+\definecolor{pantone5473c}{RGB}{17,94,103}
+
+%% Colors
+\setbeamercolor{palette primary}{bg=pantone285c}
+\setbeamercolor{alerted text}{fg=pantone142c}
+\setbeamercolor{example text}{fg=pantone513c}
+\setbeamercolor{bibliography entry location}{fg=pantone285c}
+\captionsetup{labelfont={bf,color=pantone285c}}
+
+%% Title page
+\ifinstitutebrand
+    \institute{
+        \vspace{1.5em}
+        \includegraphics[height=2em]{images/cambridge_logo_dark.png}
+    }
+\fi
+
+%% Progress Bar
+\newcommand{\progressbar}{2.5pt}
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{\progressbar}
+\setlength{\metropolis@progressonsectionpage@linewidth}{\progressbar}
+\setlength{\metropolis@progressinheadfoot@linewidth}{\progressbar}
+\makeatother
+\setbeamercolor{progress bar}{
+    use=pantone541c,
+    fg=pantone541c,
+    bg=pantone284c %pantone541c!50!black!30
+}
+
+%% Footline
+\setbeamertemplate{frame numbering}[fraction]
+\setbeamerfont{page number in head/foot}{size=\tiny}
+\setbeamercolor{footline}{%
+    fg=white,%
+    bg=pantone541c%
+}
+
+\ifinstitutebrand
+    \setbeamertemplate{frame footer}{%
+        \includegraphics[height=1em, trim={0 4.5cm 0 4.5cm}]{images/cambridge_logo_light.png}%
+    }
+\else
+    \setbeamertemplate{frame footer}{\insertshortauthor\ |\ \insertshorttitle}
+\fi
