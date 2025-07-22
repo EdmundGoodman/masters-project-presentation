@@ -4,7 +4,7 @@ The LaTeX source code for my Masters project presentation, in partial requiremen
 
 <p align="center">
 <a href="https://github.com/EdmundGoodman/masters-project-presentation/releases/download/tidied/Project_presentation.pdf">
-<img src="https://raw.githubusercontent.com/EdmundGoodman/masters-project-presentation/main/images/title_slide.png">
+<img src="https://github.com/EdmundGoodman/masters-project-presentation/blob/main/images/title_slide.png?raw=true">
 </a>
 </p>
 
